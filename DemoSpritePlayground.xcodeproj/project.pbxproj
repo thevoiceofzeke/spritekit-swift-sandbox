@@ -15,6 +15,11 @@
 		029D32291A940A1700F9E2D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029D32281A940A1700F9E2D9 /* Images.xcassets */; };
 		029D322C1A940A1700F9E2D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029D322A1A940A1700F9E2D9 /* LaunchScreen.xib */; };
 		029D32381A940A1700F9E2D9 /* DemoSpritePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D32371A940A1700F9E2D9 /* DemoSpritePlaygroundTests.swift */; };
+		02B0815B1A9A92970023DAB6 /* genericBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02B081561A9A92970023DAB6 /* genericBg.jpg */; };
+		02B0815C1A9A92970023DAB6 /* genericBigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B081571A9A92970023DAB6 /* genericBigCircle.png */; };
+		02B0815D1A9A92970023DAB6 /* genericBigSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B081581A9A92970023DAB6 /* genericBigSquare.png */; };
+		02B0815E1A9A92970023DAB6 /* genericCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B081591A9A92970023DAB6 /* genericCircle.png */; };
+		02B0815F1A9A92970023DAB6 /* genericSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 02B0815A1A9A92970023DAB6 /* genericSquare.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		029D32311A940A1700F9E2D9 /* DemoSpritePlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoSpritePlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		029D32361A940A1700F9E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029D32371A940A1700F9E2D9 /* DemoSpritePlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSpritePlaygroundTests.swift; sourceTree = "<group>"; };
+		02B081561A9A92970023DAB6 /* genericBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = genericBg.jpg; sourceTree = "<group>"; };
+		02B081571A9A92970023DAB6 /* genericBigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genericBigCircle.png; sourceTree = "<group>"; };
+		02B081581A9A92970023DAB6 /* genericBigSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genericBigSquare.png; sourceTree = "<group>"; };
+		02B081591A9A92970023DAB6 /* genericCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genericCircle.png; sourceTree = "<group>"; };
+		02B0815A1A9A92970023DAB6 /* genericSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genericSquare.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 		029D321A1A940A1600F9E2D9 /* DemoSpritePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				02B081551A9A92970023DAB6 /* Images */,
 				029D321D1A940A1600F9E2D9 /* AppDelegate.swift */,
 				029D321F1A940A1600F9E2D9 /* GameScene.sks */,
 				029D32211A940A1600F9E2D9 /* GameScene.swift */,
@@ -116,6 +127,18 @@
 				029D32361A940A1700F9E2D9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02B081551A9A92970023DAB6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				02B081561A9A92970023DAB6 /* genericBg.jpg */,
+				02B081571A9A92970023DAB6 /* genericBigCircle.png */,
+				02B081581A9A92970023DAB6 /* genericBigSquare.png */,
+				02B081591A9A92970023DAB6 /* genericCircle.png */,
+				02B0815A1A9A92970023DAB6 /* genericSquare.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +221,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B0815C1A9A92970023DAB6 /* genericBigCircle.png in Resources */,
+				02B0815D1A9A92970023DAB6 /* genericBigSquare.png in Resources */,
 				029D322C1A940A1700F9E2D9 /* LaunchScreen.xib in Resources */,
+				02B0815F1A9A92970023DAB6 /* genericSquare.png in Resources */,
+				02B0815E1A9A92970023DAB6 /* genericCircle.png in Resources */,
 				029D32291A940A1700F9E2D9 /* Images.xcassets in Resources */,
+				02B0815B1A9A92970023DAB6 /* genericBg.jpg in Resources */,
 				029D32201A940A1600F9E2D9 /* GameScene.sks in Resources */,
 				029D32271A940A1600F9E2D9 /* Main.storyboard in Resources */,
 			);
@@ -415,6 +443,7 @@
 				029D323D1A940A1700F9E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		029D323E1A940A1700F9E2D9 /* Build configuration list for PBXNativeTarget "DemoSpritePlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +452,7 @@
 				029D32401A940A1700F9E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

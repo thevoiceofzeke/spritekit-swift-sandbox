@@ -6,38 +6,67 @@
 //  Copyright (c) 2015 Zeke Witter. All rights reserved.
 //
 
+
 import SpriteKit
 
+struct SpriteType {
+    static let Circle       :   String = "circle"
+    static let Square       :   String = "square"
+    static let Background   :   String = "background"
+}
+
 class GameScene: SKScene {
+    
+    var selectedNode: SKSpriteNode?
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        self.addChild(myLabel)
+                
+        // Set no gravity.
+        physicsWorld.gravity = CGVectorMake(0, 0)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
+        // Record initial location of touch.
+        let touch = touches.anyObject() as UITouch
+        let location = touch.locationInNode(self)
+        selectSpriteForTouch(location)
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        // Record location of touch.
+        let touch = touches.anyObject() as UITouch
+        let touchLocation = touch.locationInNode(self)
         
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+        // Define movement for the sprite.
+        let moveAction = SKAction.moveTo(CGPointMake(touchLocation.x, touchLocation.y), duration: 0.0)
+        if let node = selectedNode {
+            node.runAction(moveAction)
         }
     }
+    
+    /*
+        This method gets the sprite node at the touched location, if one exists.
+    
+        Note: In this project, a node will always exist, since the background is a sprite itself.
+        This means we'll have to do some special handling to determine the type of sprite selected.
+    */
+    func selectSpriteForTouch(location: CGPoint) {
+        // Get the node at the touched location.
+        let touchedNode = self.nodeAtPoint(location) as SKSpriteNode
+        println("Selected sprite with name: \(touchedNode.name)")
+        
+        if touchedNode.name!.hasPrefix(SpriteType.Background) {
+            // Don't do anything!
+        } else {
+            // Store the selected node. 
+            if selectedNode != touchedNode {
+                selectedNode = touchedNode
+            }
+        }
+        
+    }
+
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
